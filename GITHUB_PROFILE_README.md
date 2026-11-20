@@ -6,7 +6,7 @@
   </a>
 
   <p align="center">
-    <strong>Bridging Code & Infrastructure • Automating Everything • Building Resilient Systems</strong>
+    <strong>Bridging Code & Infrastructure • Automating Deployments • Building Resilient Systems</strong>
   </p>
 
   <!-- Quick Action Badges -->
@@ -62,46 +62,53 @@ I am a hands-on **DevOps Engineer & Cloud Enthusiast** passionate about architec
 
 ---
 
-### 🚀 Core Engineering Showcases
+## 🚀 Live 3D Automated Project Architectures
 
-<table>
-  <tr>
-    <td width="33%" valign="top">
-      <h3 align="center">🔄 AWS Blue-Green Deployment</h3>
-      <p align="center">
-        <a href="https://github.com/jotibabhate04/AWS-Blue-Green-Deployment">
-          <img src="https://img.shields.io/badge/GitHub-Repository-ff9800?style=for-the-badge&logo=github&logoColor=white" />
-        </a>
-      </p>
-      <p>Implemented zero-downtime deployment lab using AWS Application Load Balancer, weighted target group routing, and instant rollback paths.</p>
-      <p><b>Tech:</b> <code>AWS EC2</code>, <code>ALB</code>, <code>Target Groups</code>, <code>Traffic Routing</code></p>
-    </td>
-    <td width="33%" valign="top">
-      <h3 align="center">🐳 Three-Tier Django App</h3>
-      <p align="center">
-        <a href="https://github.com/jotibabhate04/Three-Tier-Django-Notes-Application">
-          <img src="https://img.shields.io/badge/GitHub-Repository-2196f3?style=for-the-badge&logo=github&logoColor=white" />
-        </a>
-      </p>
-      <p>Full 3-tier containerization orchestrated with Docker Compose: Nginx web reverse proxy, Django application server, and isolated MySQL database.</p>
-      <p><b>Tech:</b> <code>Docker</code>, <code>Compose</code>, <code>Nginx</code>, <code>Django</code>, <code>MySQL</code></p>
-    </td>
-    <td width="33%" valign="top">
-      <h3 align="center">🛡️ AWS High Availability VPC</h3>
-      <p align="center">
-        <a href="https://github.com/jotibabhate04/AWS-high-availability-project">
-          <img src="https://img.shields.io/badge/GitHub-Repository-10b981?style=for-the-badge&logo=github&logoColor=white" />
-        </a>
-      </p>
-      <p>Resilient multi-AZ cloud architecture across two Availability Zones with public/private subnets, Auto Scaling, NAT Gateways, and S3 VPC Endpoint.</p>
-      <p><b>Tech:</b> <code>AWS VPC</code>, <code>EC2</code>, <code>ALB</code>, <code>Auto Scaling</code>, <code>S3</code></p>
-    </td>
-  </tr>
-</table>
+### 1. 🔄 AWS Blue-Green Deployment
+> Implemented an AWS Blue-Green Deployment lab using an Application Load Balancer to explore deployment strategies, traffic switching, and safe application releases.
+
+[![AWS Blue-Green Architecture](https://raw.githubusercontent.com/jotibabhate04/jotibabhate04.github.io/main/aws-blue-green-3d.svg)](https://github.com/jotibabhate04/AWS-Blue-Green-Deployment)
 
 <p align="center">
-  👉 <i>Watch the real-time animated 3D simulations of these architectures running live on my <b><a href="https://jotibabhate04.github.io">3D Portfolio</a></b>!</i>
+  <a href="https://github.com/jotibabhate04/AWS-Blue-Green-Deployment">
+    <img src="https://img.shields.io/badge/View_Repository-AWS--Blue--Green--Deployment-ff9800?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
 </p>
+
+- **Tech Stack:** `AWS EC2`, `Application Load Balancer`, `Target Groups`, `Traffic Management`
+- **Key Highlight:** Live weighted listener rules routing 90% traffic to Green and 10% canary traffic to Blue with instantaneous zero-downtime rollback.
+
+---
+
+### 2. 🐳 Three-Tier Django Notes Application
+> Containerized a Django Notes application using a three-tier architecture consisting of Nginx as the web tier, Django as the application tier, and MySQL as the database tier.
+
+[![Three-Tier Django Architecture](https://raw.githubusercontent.com/jotibabhate04/jotibabhate04.github.io/main/django-3tier-3d.svg)](https://github.com/jotibabhate04/Three-Tier-Django-Notes-Application)
+
+<p align="center">
+  <a href="https://github.com/jotibabhate04/Three-Tier-Django-Notes-Application">
+    <img src="https://img.shields.io/badge/View_Repository-Three--Tier--Django--Notes--Application-06b6d4?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</p>
+
+- **Tech Stack:** `Docker`, `Docker Compose`, `Nginx`, `Django`, `MySQL`, `Linux`
+- **Key Highlight:** Decoupled presentation, WSGI application logic, and persistence tiers communicating securely over an isolated user-defined bridge network (`app-net`).
+
+---
+
+### 3. 🛡️ AWS High Availability Infrastructure
+> Designed a highly available AWS infrastructure across two Availability Zones using public and private subnets, Application Load Balancer, Auto Scaling Groups, NAT Gateways, and S3 Gateway Endpoint.
+
+[![AWS High Availability Architecture](https://raw.githubusercontent.com/jotibabhate04/jotibabhate04.github.io/main/aws-ha-3d.svg)](https://github.com/jotibabhate04/AWS-high-availability-project)
+
+<p align="center">
+  <a href="https://github.com/jotibabhate04/AWS-high-availability-project">
+    <img src="https://img.shields.io/badge/View_Repository-AWS--high--availability--project-8b5cf6?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</p>
+
+- **Tech Stack:** `AWS VPC`, `EC2`, `ALB`, `Auto Scaling`, `NAT Gateway`, `S3 Endpoint`
+- **Key Highlight:** Active-Active multi-AZ resilience with cross-zone load balancing, private S3 gateway routing, and dynamic horizontal auto-scaling.
 
 ---
 
@@ -145,6 +152,9 @@ I am a hands-on **DevOps Engineer & Cloud Enthusiast** passionate about architec
   </a>
   <a href="https://instagram.com/jyotiba_bhate_04">
     <img src="https://img.shields.io/badge/Instagram-@jyotiba__bhate__04-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
+  </a>
+  <a href="https://jotibabhate04.github.io">
+    <img src="https://img.shields.io/badge/🌐_3D_Portfolio-Live_Site-3b82f6?style=for-the-badge&logo=google-chrome&logoColor=white" alt="3D Portfolio" />
   </a>
 </p>
 
