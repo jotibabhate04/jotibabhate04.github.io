@@ -112,6 +112,41 @@ I am a hands-on **DevOps Engineer & Cloud Enthusiast** passionate about architec
 
 ---
 
+### 4. ☸️ Kubernetes Three-Tier Application Deployment
+> Deployed a three-tier application consisting of Frontend, Backend, and Admin components on Kubernetes. Configured Kubernetes Deployments, Services, and Ingress to manage application components and route incoming HTTP traffic.
+
+[![Kubernetes Ingress 3-Tier Architecture](https://raw.githubusercontent.com/jotibabhate04/jotibabhate04.github.io/main/k8s-ingress-3tier-3d.svg)](https://jotibabhate04.github.io#projects)
+
+<p align="center">
+  <a href="https://jotibabhate04.github.io#projects">
+    <img src="https://img.shields.io/badge/View_In_3D_Portfolio-Kubernetes_Ingress_Deployment-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
+  </a>
+</p>
+
+- **Tech Stack:** `Kubernetes`, `Docker`, `Nginx`, `Ingress Controller`, `K8s Deployments`, `K8s Services`, `YAML`, `Linux`
+- **Key Highlight:** Automated ingress traffic management routing external requests across dedicated ClusterIP services to Frontend, Backend, and Admin deployments; verified HTTP 200 OK across UI and API endpoints (`Backend is working successfully!`).
+
+---
+
+### 5. ⚡ Node.js Application Deployment using PM2, Nginx & Jenkins CI/CD
+> Deployed a Node.js application on AWS EC2 Ubuntu 24.04 and implemented a Jenkins CI/CD pipeline to automate application deployment. Used PM2 for process management, Nginx as a reverse proxy, and Cloudflare Tunnel to provide temporary public HTTPS access.
+
+[![Node.js DevOps CI/CD Architecture](https://raw.githubusercontent.com/jotibabhate04/jotibabhate04.github.io/main/nodejs-devops-3d.svg)](https://github.com/jotibabhate04/nodejs-devops-project)
+
+<p align="center">
+  <a href="https://github.com/jotibabhate04/nodejs-devops-project" target="_blank">
+    <img src="https://img.shields.io/badge/View_Repository-nodejs--devops--project-D24939?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  <a href="https://jotibabhate04.github.io" target="_blank">
+    <img src="https://img.shields.io/badge/Documentation-View_PDF-F59E0B?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white" />
+  </a>
+</p>
+
+- **Tech Stack:** `AWS EC2`, `Ubuntu 24.04`, `Node.js 22`, `PM2`, `Nginx`, `Jenkins`, `Jenkinsfile`, `Git & GitHub`, `Cloudflare Tunnel`
+- **Key Highlight:** Declarative Jenkins CI/CD automation on AWS EC2 (Build #2 finished with SUCCESS); PM2 daemon process manager for automatic process recovery and host metrics; Nginx reverse proxy routing port 80 to port 3000.
+
+---
+
 ### 🛠️ Technical Arsenal
 
 <div align="center">
