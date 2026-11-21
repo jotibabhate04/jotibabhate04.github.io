@@ -5,17 +5,33 @@
       <stop offset="100%" stop-color="#0d1b2e" />
     </linearGradient>
     <linearGradient id="ec2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.2" />
-      <stop offset="100%" stop-color="#d97706" stop-opacity="0.06" />
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#059669" stop-opacity="0.08" />
     </linearGradient>
     <linearGradient id="jenkinsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.2" />
-      <stop offset="100%" stop-color="#b91c1c" stop-opacity="0.06" />
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#b91c1c" stop-opacity="0.08" />
     </linearGradient>
     <linearGradient id="cfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f97316" stop-opacity="0.25" />
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.28" />
       <stop offset="100%" stop-color="#ea580c" stop-opacity="0.08" />
     </linearGradient>
+    <filter id="glowOrange" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glowRed" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glowGreen" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glowBlue" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
   </defs>
 
   <style>
@@ -23,70 +39,109 @@
     .title-text { font-family: 'JetBrains Mono', monospace, sans-serif; font-size: 11px; font-weight: 600; }
     .node-title { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; fill: #f8fafc; }
     .node-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; fill: #94a3b8; }
-    .pipe-line { stroke: rgba(255,255,255,0.25); stroke-width: 1.5; stroke-dasharray: 4 3; fill: none; }
-    .pulse-dot { animation: blink 1.4s infinite; }
-    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .pipe-active-red { stroke: #ef4444; stroke-width: 2; stroke-dasharray: 6 4; fill: none; animation: dashMove 1.6s linear infinite; }
+    .pipe-active-orange { stroke: #f97316; stroke-width: 2; stroke-dasharray: 6 4; fill: none; animation: dashMove 1.4s linear infinite; }
+    .pipe-active-green { stroke: #10b981; stroke-width: 2; stroke-dasharray: 6 4; fill: none; animation: dashMove 1.4s linear infinite; }
+    .pipe-active-blue { stroke: #38bdf8; stroke-width: 2; stroke-dasharray: 6 4; fill: none; animation: dashMove 1.4s linear infinite; }
+    @keyframes dashMove { from { stroke-dashoffset: 20; } to { stroke-dashoffset: 0; } }
+    .pulse-dot { animation: blink 1.2s infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.3; transform: scale(0.85); } }
   </style>
 
   <rect x="2" y="2" width="596" height="236" class="card-bg" />
 
+  <!-- Background Architecture Grid -->
+  <g stroke="rgba(255,255,255,0.03)" stroke-width="1">
+    <line x1="20" y1="50" x2="580" y2="50" />
+    <line x1="20" y1="100" x2="580" y2="100" />
+    <line x1="20" y1="150" x2="580" y2="150" />
+    <line x1="20" y1="200" x2="580" y2="200" />
+    <line x1="90" y1="20" x2="90" y2="220" />
+    <line x1="220" y1="20" x2="220" y2="220" />
+    <line x1="350" y1="20" x2="350" y2="220" />
+    <line x1="480" y1="20" x2="480" y2="220" />
+  </g>
+
   <!-- Top Banner -->
-  <rect x="20" y="14" width="410" height="24" rx="12" fill="rgba(249, 115, 22, 0.15)" stroke="rgba(249, 115, 22, 0.4)" />
+  <rect x="20" y="14" width="440" height="24" rx="12" fill="rgba(249, 115, 22, 0.15)" stroke="rgba(249, 115, 22, 0.4)" />
   <circle cx="34" cy="26" r="4" fill="#f97316" class="pulse-dot" />
-  <text x="46" y="30" class="title-text" fill="#fdba74">AWS EC2 • UBUNTU 24.04 • PM2 • NGINX • JENKINS CI/CD</text>
+  <text x="46" y="30" class="title-text" fill="#fdba74">AUTOMATED CI/CD • AWS EC2 • PM2 • NGINX • JENKINS</text>
 
-  <!-- Connectors -->
-  <path d="M 80 120 L 115 120" class="pipe-line" stroke="#60a5fa" />
-  <path d="M 205 120 L 235 120" class="pipe-line" stroke="#f97316" />
-  <path d="M 335 120 L 365 120" class="pipe-line" stroke="#34d399" />
-  <path d="M 465 120 L 495 120" class="pipe-line" stroke="#a78bfa" />
+  <!-- Connectors (Active Dashed Animated Lines) -->
+  <path id="pathGitToJenkins" d="M 80 120 L 115 120" class="pipe-active-red" />
+  <path id="pathCfToNginx" d="M 335 120 L 365 120" class="pipe-active-orange" />
+  <path id="pathNginxToNode" d="M 465 120 L 495 120" class="pipe-active-green" />
 
-  <!-- Jenkins Pipeline Arc (Top) -->
-  <path d="M 160 85 C 160 55, 415 55, 415 85" class="pipe-line" stroke="#ef4444" stroke-width="1.8" />
-  <text x="287" y="62" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#f87171">Declarative Jenkins CI/CD Automation (Build #2 SUCCESS)</text>
+  <!-- Top Jenkins Automated Deployment Pipeline Arc -->
+  <path id="pathJenkinsDeployArc" d="M 160 85 C 160 50, 540 50, 540 85" class="pipe-active-red" stroke-width="2" />
+  <text x="350" y="58" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" font-weight="600" fill="#f87171">Automated Jenkins CI/CD Deploy Arc (Build #2 Finished: SUCCESS)</text>
+
+  <!-- ================= AUTOMATED STREAMING PACKETS ================= -->
+  <!-- Streaming Git to Jenkins packet -->
+  <circle r="3.5" fill="#ef4444" filter="url(#glowRed)">
+    <animateMotion dur="1.2s" repeatCount="indefinite" path="M 80 120 L 115 120" />
+  </circle>
+
+  <!-- Streaming CI/CD Deploy Packet along top Arc -->
+  <circle r="4.5" fill="#f87171" filter="url(#glowRed)">
+    <animateMotion dur="2.4s" repeatCount="indefinite" path="M 160 85 C 160 50, 540 50, 540 85" />
+  </circle>
+  <circle r="4.5" fill="#4ade80" filter="url(#glowGreen)">
+    <animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite" path="M 160 85 C 160 50, 540 50, 540 85" />
+  </circle>
+
+  <!-- Streaming Cloudflare to Nginx packet -->
+  <circle r="3.5" fill="#f97316" filter="url(#glowOrange)">
+    <animateMotion dur="1.4s" repeatCount="indefinite" path="M 335 120 L 365 120" />
+  </circle>
+
+  <!-- Streaming Nginx to PM2/Node.js packet -->
+  <circle r="3.5" fill="#38bdf8" filter="url(#glowBlue)">
+    <animateMotion dur="1.2s" repeatCount="indefinite" path="M 465 120 L 495 120" />
+  </circle>
 
   <!-- Box 1: GitHub Repo -->
   <g transform="translate(18, 90)">
-    <rect width="62" height="60" rx="8" fill="#1e293b" stroke="rgba(255,255,255,0.15)" />
+    <rect width="62" height="64" rx="8" fill="#1e293b" stroke="rgba(255,255,255,0.18)" />
     <text x="31" y="24" text-anchor="middle" font-size="14">🐙</text>
-    <text x="31" y="38" text-anchor="middle" font-family="Inter" font-size="8" font-weight="600" fill="#f8fafc">GitHub</text>
-    <text x="31" y="47" text-anchor="middle" font-family="JetBrains Mono" font-size="6.5" fill="#94a3b8">main branch</text>
+    <text x="31" y="39" text-anchor="middle" font-family="Inter" font-size="8.5" font-weight="700" fill="#f8fafc">GitHub</text>
+    <text x="31" y="50" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#94a3b8">main branch</text>
   </g>
 
   <!-- Box 2: Jenkins Server -->
-  <g transform="translate(115, 87)">
-    <rect width="90" height="66" rx="8" fill="url(#jenkinsGrad)" stroke="#ef4444" stroke-width="1.2" />
+  <g transform="translate(115, 86)">
+    <rect width="90" height="72" rx="8" fill="url(#jenkinsGrad)" stroke="#ef4444" stroke-width="1.5" />
     <text x="12" y="20" class="node-title" fill="#fca5a5">Jenkins CI/CD</text>
     <text x="12" y="32" class="node-sub">Port 8080</text>
-    <rect x="8" y="44" width="74" height="15" rx="3" fill="rgba(0,0,0,0.3)" />
-    <text x="45" y="55" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" fill="#86efac">Pipeline SUCCESS</text>
+    <rect x="8" y="44" width="74" height="18" rx="4" fill="rgba(0,0,0,0.35)" />
+    <text x="45" y="57" text-anchor="middle" font-family="JetBrains Mono" font-size="8" font-weight="600" fill="#86efac">Build SUCCESS</text>
   </g>
 
   <!-- Box 3: Cloudflare Quick Tunnel -->
-  <g transform="translate(235, 87)">
-    <rect width="100" height="66" rx="8" fill="url(#cfGrad)" stroke="#f97316" stroke-width="1.2" />
+  <g transform="translate(235, 86)">
+    <rect width="100" height="72" rx="8" fill="url(#cfGrad)" stroke="#f97316" stroke-width="1.5" />
     <text x="12" y="20" class="node-title" fill="#fed7aa">Cloudflare</text>
     <text x="12" y="32" class="node-sub">Quick Tunnel</text>
-    <rect x="8" y="44" width="84" height="15" rx="3" fill="rgba(0,0,0,0.3)" />
-    <text x="50" y="55" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#fdba74">Public HTTPS Demo</text>
+    <rect x="8" y="44" width="84" height="18" rx="4" fill="rgba(0,0,0,0.35)" />
+    <text x="50" y="57" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" font-weight="600" fill="#fdba74">HTTPS Demo Active</text>
   </g>
 
   <!-- Box 4: Nginx Reverse Proxy -->
-  <g transform="translate(365, 87)">
-    <rect width="100" height="66" rx="8" fill="url(#ec2Grad)" stroke="#10b981" stroke-width="1.2" />
+  <g transform="translate(365, 86)">
+    <rect width="100" height="72" rx="8" fill="url(#ec2Grad)" stroke="#10b981" stroke-width="1.5" />
     <text x="12" y="20" class="node-title" fill="#a7f3d0">Nginx Proxy</text>
     <text x="12" y="32" class="node-sub">Port 80 (Reverse)</text>
-    <rect x="8" y="44" width="84" height="15" rx="3" fill="rgba(0,0,0,0.3)" />
-    <text x="50" y="55" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#6ee7b7">Proxy → 127.0.0.1:3000</text>
+    <rect x="8" y="44" width="84" height="18" rx="4" fill="rgba(0,0,0,0.35)" />
+    <text x="50" y="57" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" font-weight="600" fill="#6ee7b7">→ 127.0.0.1:3000</text>
   </g>
 
   <!-- Box 5: Node.js + PM2 (AWS EC2) -->
-  <g transform="translate(495, 87)">
-    <rect width="90" height="66" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2" />
+  <g transform="translate(495, 86)">
+    <rect width="90" height="72" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
     <text x="10" y="20" class="node-title" fill="#bae6fd">Node.js 22</text>
     <text x="10" y="32" class="node-sub">PM2 Process</text>
-    <rect x="6" y="44" width="78" height="15" rx="3" fill="rgba(0,0,0,0.3)" />
-    <text x="45" y="55" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#38bdf8">Status: ONLINE</text>
+    <rect x="6" y="44" width="78" height="18" rx="4" fill="rgba(0,0,0,0.35)" />
+    <text x="45" y="57" text-anchor="middle" font-family="JetBrains Mono" font-size="8" font-weight="600" fill="#38bdf8">Status: ONLINE</text>
   </g>
 
   <!-- Bottom Details Bar -->

@@ -5,21 +5,37 @@
       <stop offset="100%" stop-color="#0d1b2e" />
     </linearGradient>
     <linearGradient id="k8sIngressGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#326ce5" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#2563eb" stop-opacity="0.08" />
+      <stop offset="0%" stop-color="#326ce5" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#2563eb" stop-opacity="0.1" />
     </linearGradient>
     <linearGradient id="k8sFeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#0891b2" stop-opacity="0.08" />
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#0891b2" stop-opacity="0.1" />
     </linearGradient>
     <linearGradient id="k8sBeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#10b981" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#059669" stop-opacity="0.08" />
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#059669" stop-opacity="0.1" />
     </linearGradient>
     <linearGradient id="k8sAdminGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#7e22ce" stop-opacity="0.08" />
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#7e22ce" stop-opacity="0.1" />
     </linearGradient>
+    <filter id="glowBlue" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glowCyan" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glowGreen" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glowPurple" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
   </defs>
 
   <style>
@@ -27,92 +43,142 @@
     .title-text { font-family: 'JetBrains Mono', monospace, sans-serif; font-size: 11px; font-weight: 600; }
     .node-title { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; fill: #f8fafc; }
     .node-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; fill: #94a3b8; }
-    .pipe-line { stroke: rgba(255,255,255,0.25); stroke-width: 1.5; stroke-dasharray: 4 3; fill: none; }
-    .pulse-dot { animation: blink 1.4s infinite; }
-    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .pipe-active-blue { stroke: #3b82f6; stroke-width: 2; stroke-dasharray: 6 4; fill: none; animation: dashMove 1.5s linear infinite; }
+    .pipe-active-cyan { stroke: #06b6d4; stroke-width: 2; stroke-dasharray: 6 4; fill: none; animation: dashMove 1.5s linear infinite; }
+    .pipe-active-green { stroke: #10b981; stroke-width: 2; stroke-dasharray: 6 4; fill: none; animation: dashMove 1.5s linear infinite; }
+    .pipe-active-purple { stroke: #a855f7; stroke-width: 2; stroke-dasharray: 6 4; fill: none; animation: dashMove 1.5s linear infinite; }
+    @keyframes dashMove { from { stroke-dashoffset: 20; } to { stroke-dashoffset: 0; } }
+    .pulse-dot { animation: blink 1.2s infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.3; transform: scale(0.85); } }
   </style>
 
   <rect x="2" y="2" width="596" height="236" class="card-bg" />
 
+  <!-- Background Architecture Grid -->
+  <g stroke="rgba(255,255,255,0.03)" stroke-width="1">
+    <line x1="20" y1="50" x2="580" y2="50" />
+    <line x1="20" y1="100" x2="580" y2="100" />
+    <line x1="20" y1="150" x2="580" y2="150" />
+    <line x1="20" y1="200" x2="580" y2="200" />
+    <line x1="110" y1="20" x2="110" y2="220" />
+    <line x1="250" y1="20" x2="250" y2="220" />
+    <line x1="420" y1="20" x2="420" y2="220" />
+  </g>
+
   <!-- Top Banner -->
-  <rect x="20" y="14" width="370" height="24" rx="12" fill="rgba(50, 108, 229, 0.15)" stroke="rgba(50, 108, 229, 0.4)" />
+  <rect x="20" y="14" width="410" height="24" rx="12" fill="rgba(50, 108, 229, 0.15)" stroke="rgba(50, 108, 229, 0.4)" />
   <circle cx="34" cy="26" r="4" fill="#326ce5" class="pulse-dot" />
-  <text x="46" y="30" class="title-text" fill="#60a5fa">KUBERNETES INGRESS • 3-TIER DEPLOYMENTS &amp; SERVICES</text>
+  <text x="46" y="30" class="title-text" fill="#60a5fa">AUTOMATED K8S INGRESS • MULTI-TIER ROUTING ACTIVE</text>
 
-  <!-- Connectors from Ingress to 3 Tiers -->
-  <path d="M 68 125 L 120 125" class="pipe-line" stroke="#60a5fa" />
-  <path d="M 230 125 L 260 80 L 285 80" class="pipe-line" stroke="#06b6d4" />
-  <path d="M 230 125 L 285 125" class="pipe-line" stroke="#10b981" />
-  <path d="M 230 125 L 260 170 L 285 170" class="pipe-line" stroke="#c084fc" />
+  <!-- Connectors (Active Dashed Animated Lines) -->
+  <!-- User to Ingress -->
+  <path id="pathUserToIngress" d="M 68 125 L 120 125" class="pipe-active-blue" />
+  
+  <!-- Ingress to Frontend Service -->
+  <path id="pathIngressToFe" d="M 230 115 C 255 115, 255 78, 285 78" class="pipe-active-cyan" />
+  <!-- Ingress to Backend Service -->
+  <path id="pathIngressToBe" d="M 230 125 L 285 125" class="pipe-active-green" />
+  <!-- Ingress to Admin Service -->
+  <path id="pathIngressToAdmin" d="M 230 135 C 255 135, 255 172, 285 172" class="pipe-active-purple" />
 
-  <!-- Connectors from Services to Deployments -->
-  <path d="M 410 80 L 445 80" class="pipe-line" stroke="#06b6d4" />
-  <path d="M 410 125 L 445 125" class="pipe-line" stroke="#10b981" />
-  <path d="M 410 170 L 445 170" class="pipe-line" stroke="#c084fc" />
+  <!-- Services to Deployments -->
+  <path id="pathFeToPods" d="M 410 78 L 445 78" class="pipe-active-cyan" />
+  <path id="pathBeToPods" d="M 410 125 L 445 125" class="pipe-active-green" />
+  <path id="pathAdminToPods" d="M 410 172 L 445 172" class="pipe-active-purple" />
+
+  <!-- ================= AUTOMATED STREAMING PACKETS ================= -->
+  <!-- Packet: User -> Ingress -->
+  <circle r="4" fill="#60a5fa" filter="url(#glowBlue)">
+    <animateMotion dur="1.2s" repeatCount="indefinite" path="M 68 125 L 120 125" />
+  </circle>
+
+  <!-- Packets: Ingress -> Frontend Service -> Pods -->
+  <circle r="3.5" fill="#06b6d4" filter="url(#glowCyan)">
+    <animateMotion dur="1.8s" repeatCount="indefinite" path="M 230 115 C 255 115, 255 78, 285 78" />
+  </circle>
+  <circle r="3.5" fill="#22d3ee" filter="url(#glowCyan)">
+    <animateMotion dur="1.2s" begin="0.4s" repeatCount="indefinite" path="M 410 78 L 445 78" />
+  </circle>
+
+  <!-- Packets: Ingress -> Backend Service -> Pods -->
+  <circle r="3.5" fill="#10b981" filter="url(#glowGreen)">
+    <animateMotion dur="1.6s" repeatCount="indefinite" path="M 230 125 L 285 125" />
+  </circle>
+  <circle r="3.5" fill="#34d399" filter="url(#glowGreen)">
+    <animateMotion dur="1.2s" begin="0.5s" repeatCount="indefinite" path="M 410 125 L 445 125" />
+  </circle>
+
+  <!-- Packets: Ingress -> Admin Service -> Pods -->
+  <circle r="3.5" fill="#c084fc" filter="url(#glowPurple)">
+    <animateMotion dur="2.0s" repeatCount="indefinite" path="M 230 135 C 255 135, 255 172, 285 172" />
+  </circle>
+  <circle r="3.5" fill="#e9d5ff" filter="url(#glowPurple)">
+    <animateMotion dur="1.2s" begin="0.6s" repeatCount="indefinite" path="M 410 172 L 445 172" />
+  </circle>
 
   <!-- Client / Browser Box -->
-  <g transform="translate(18, 100)">
-    <rect width="52" height="50" rx="8" fill="#1e293b" stroke="rgba(255,255,255,0.15)" />
-    <text x="26" y="22" text-anchor="middle" font-size="14">🌐</text>
-    <text x="26" y="36" text-anchor="middle" font-family="Inter" font-size="8" font-weight="600" fill="#e2e8f0">User</text>
-    <text x="26" y="44" text-anchor="middle" font-family="JetBrains Mono" font-size="6.5" fill="#94a3b8">HTTP</text>
+  <g transform="translate(18, 98)">
+    <rect width="50" height="54" rx="8" fill="#1e293b" stroke="rgba(255,255,255,0.18)" />
+    <text x="25" y="22" text-anchor="middle" font-size="14">🌐</text>
+    <text x="25" y="37" text-anchor="middle" font-family="Inter" font-size="8.5" font-weight="700" fill="#e2e8f0">User</text>
+    <text x="25" y="47" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#60a5fa">HTTP:80</text>
   </g>
 
   <!-- Ingress Controller Box -->
-  <g transform="translate(120, 92)">
-    <rect width="110" height="66" rx="10" fill="url(#k8sIngressGrad)" stroke="#326ce5" stroke-width="1.2" />
-    <circle cx="22" cy="24" r="10" fill="rgba(50, 108, 229, 0.3)" />
-    <text x="22" y="28" text-anchor="middle" font-size="11">☸️</text>
-    <text x="40" y="24" class="node-title" fill="#bfdbfe">K8s Ingress</text>
-    <text x="40" y="36" class="node-sub">Controller</text>
-    <rect x="12" y="46" width="86" height="14" rx="4" fill="rgba(0,0,0,0.3)" />
-    <text x="55" y="56" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" fill="#93c5fd">HTTP Traffic Routing</text>
+  <g transform="translate(120, 88)">
+    <rect width="110" height="74" rx="10" fill="url(#k8sIngressGrad)" stroke="#326ce5" stroke-width="1.5" />
+    <circle cx="24" cy="24" r="10" fill="rgba(50, 108, 229, 0.35)" />
+    <text x="24" y="28" text-anchor="middle" font-size="11">☸️</text>
+    <text x="42" y="23" class="node-title" fill="#bfdbfe">K8s Ingress</text>
+    <text x="42" y="35" class="node-sub">Controller</text>
+    <rect x="10" y="46" width="90" height="18" rx="4" fill="rgba(0,0,0,0.35)" />
+    <text x="55" y="58" text-anchor="middle" font-family="JetBrains Mono" font-size="8" font-weight="600" fill="#93c5fd">HTTP Path Routing</text>
   </g>
 
   <!-- TIER 1: Frontend Service & Deployment -->
-  <g transform="translate(285, 58)">
-    <rect width="125" height="44" rx="8" fill="url(#k8sFeGrad)" stroke="#06b6d4" stroke-width="1" />
+  <g transform="translate(285, 56)">
+    <rect width="125" height="44" rx="8" fill="url(#k8sFeGrad)" stroke="#06b6d4" stroke-width="1.2" />
     <text x="12" y="18" class="node-title" fill="#a5f3fc">Frontend Service</text>
     <text x="12" y="30" class="node-sub">ClusterIP • Nginx</text>
-    <text x="12" y="39" font-family="JetBrains Mono" font-size="7" fill="#38bdf8">200 OK Response</text>
+    <text x="12" y="39" font-family="JetBrains Mono" font-size="7.5" fill="#38bdf8">✓ 200 OK Response</text>
   </g>
-  <g transform="translate(445, 58)">
-    <rect width="135" height="44" rx="8" fill="#1e293b" stroke="rgba(6, 182, 212, 0.4)" stroke-width="1" />
+  <g transform="translate(445, 56)">
+    <rect width="135" height="44" rx="8" fill="#1e293b" stroke="rgba(6, 182, 212, 0.5)" stroke-width="1.2" />
     <text x="12" y="18" class="node-title" fill="#f8fafc">Frontend Pods</text>
     <text x="12" y="30" class="node-sub">Deployment • UI Tier</text>
-    <text x="12" y="39" font-family="JetBrains Mono" font-size="7" fill="#67e8f9">Verified Healthy</text>
+    <text x="12" y="39" font-family="JetBrains Mono" font-size="7.5" fill="#67e8f9">● Verified Healthy</text>
   </g>
 
   <!-- TIER 2: Backend Service & Deployment -->
-  <g transform="translate(285, 105)">
-    <rect width="125" height="44" rx="8" fill="url(#k8sBeGrad)" stroke="#10b981" stroke-width="1" />
+  <g transform="translate(285, 103)">
+    <rect width="125" height="44" rx="8" fill="url(#k8sBeGrad)" stroke="#10b981" stroke-width="1.2" />
     <text x="12" y="18" class="node-title" fill="#a7f3d0">Backend Service</text>
     <text x="12" y="30" class="node-sub">ClusterIP • /api</text>
-    <text x="12" y="39" font-family="JetBrains Mono" font-size="7" fill="#34d399">HTTP 200 OK API</text>
+    <text x="12" y="39" font-family="JetBrains Mono" font-size="7.5" fill="#34d399">✓ HTTP 200 OK</text>
   </g>
-  <g transform="translate(445, 105)">
-    <rect width="135" height="44" rx="8" fill="#1e293b" stroke="rgba(16, 185, 129, 0.4)" stroke-width="1" />
+  <g transform="translate(445, 103)">
+    <rect width="135" height="44" rx="8" fill="#1e293b" stroke="rgba(16, 185, 129, 0.5)" stroke-width="1.2" />
     <text x="12" y="18" class="node-title" fill="#f8fafc">Backend Pods</text>
     <text x="12" y="30" class="node-sub">Deployment • API Tier</text>
-    <text x="12" y="39" font-family="JetBrains Mono" font-size="7" fill="#4ade80">Backend is working successfully!</text>
+    <text x="12" y="39" font-family="JetBrains Mono" font-size="7" fill="#4ade80">Backend is working!</text>
   </g>
 
   <!-- TIER 3: Admin Service & Deployment -->
-  <g transform="translate(285, 152)">
-    <rect width="125" height="44" rx="8" fill="url(#k8sAdminGrad)" stroke="#a855f7" stroke-width="1" />
+  <g transform="translate(285, 150)">
+    <rect width="125" height="44" rx="8" fill="url(#k8sAdminGrad)" stroke="#a855f7" stroke-width="1.2" />
     <text x="12" y="18" class="node-title" fill="#e9d5ff">Admin Service</text>
     <text x="12" y="30" class="node-sub">ClusterIP • Internal</text>
-    <text x="12" y="39" font-family="JetBrains Mono" font-size="7" fill="#c084fc">Admin Component</text>
+    <text x="12" y="39" font-family="JetBrains Mono" font-size="7.5" fill="#c084fc">✓ Admin Component</text>
   </g>
-  <g transform="translate(445, 152)">
-    <rect width="135" height="44" rx="8" fill="#1e293b" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1" />
+  <g transform="translate(445, 150)">
+    <rect width="135" height="44" rx="8" fill="#1e293b" stroke="rgba(168, 85, 247, 0.5)" stroke-width="1.2" />
     <text x="12" y="18" class="node-title" fill="#f8fafc">Admin Pods</text>
-    <text x="12" y="30" class="node-sub">Deployment • Management</text>
-    <text x="12" y="39" font-family="JetBrains Mono" font-size="7" fill="#d8b4fe">Dedicated Deployment</text>
+    <text x="12" y="30" class="node-sub">Deployment • Manage</text>
+    <text x="12" y="39" font-family="JetBrains Mono" font-size="7.5" fill="#d8b4fe">● Active Deployment</text>
   </g>
 
   <!-- Bottom Details Bar -->
   <g transform="translate(20, 208)">
-    <text x="0" y="12" font-family="JetBrains Mono" font-size="8.5" fill="#64748b">ARCHITECTURE: User/Browser → Ingress Controller → Frontend, Backend &amp; Admin Services → Deployments</text>
+    <text x="0" y="12" font-family="JetBrains Mono" font-size="8.5" fill="#64748b">ARCHITECTURE: User/Browser → K8s Ingress Controller → Frontend, Backend &amp; Admin Services → Deployments</text>
   </g>
 </svg>

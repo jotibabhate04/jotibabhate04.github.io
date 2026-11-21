@@ -914,7 +914,7 @@
        ========================================================================== */
     .projects-grid-3 {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       gap: 28px;
       align-items: stretch;
       perspective: 1400px;
@@ -1026,13 +1026,17 @@
     .project-btn-row {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: 10px;
       border-top: 1px solid var(--border-subtle);
       padding-top: 18px;
     }
 
     .project-btn-row .btn {
-      flex: 1;
+      flex: 1 1 calc(50% - 10px);
+      min-width: 125px;
+      justify-content: center;
+      text-align: center;
     }
 
     /* ==========================================================================
@@ -1898,6 +1902,26 @@
       .chip-docker { right: -10px; }
       .projects-grid-3, .skills-masonry, .labs-grid, .resume-grid, .competency-cards, .form-row, .gallery-preview-grid {
         grid-template-columns: 1fr;
+      }
+      .project-btn-row {
+        gap: 8px;
+      }
+      .project-btn-row .btn {
+        flex: 1 1 100%;
+        width: 100%;
+      }
+      .modal-overlay {
+        padding: 12px;
+      }
+      .modal-box {
+        max-height: 92vh;
+        border-radius: var(--radius-lg);
+      }
+      .modal-header {
+        padding: 16px 18px;
+      }
+      .modal-body {
+        padding: 16px;
       }
       .section-padding {
         padding: 70px 0;
