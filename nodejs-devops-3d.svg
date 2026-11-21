@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="100%" height="240">
+  <defs>
+    <linearGradient id="nodeBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080e1a" />
+      <stop offset="100%" stop-color="#0d1b2e" />
+    </linearGradient>
+    <linearGradient id="ec2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#d97706" stop-opacity="0.06" />
+    </linearGradient>
+    <linearGradient id="jenkinsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#b91c1c" stop-opacity="0.06" />
+    </linearGradient>
+    <linearGradient id="cfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#ea580c" stop-opacity="0.08" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .card-bg { fill: url(#nodeBgGrad); stroke: rgba(255,255,255,0.12); stroke-width: 1; rx: 14px; }
+    .title-text { font-family: 'JetBrains Mono', monospace, sans-serif; font-size: 11px; font-weight: 600; }
+    .node-title { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; fill: #f8fafc; }
+    .node-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; fill: #94a3b8; }
+    .pipe-line { stroke: rgba(255,255,255,0.25); stroke-width: 1.5; stroke-dasharray: 4 3; fill: none; }
+    .pulse-dot { animation: blink 1.4s infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  </style>
+
+  <rect x="2" y="2" width="596" height="236" class="card-bg" />
+
+  <!-- Top Banner -->
+  <rect x="20" y="14" width="410" height="24" rx="12" fill="rgba(249, 115, 22, 0.15)" stroke="rgba(249, 115, 22, 0.4)" />
+  <circle cx="34" cy="26" r="4" fill="#f97316" class="pulse-dot" />
+  <text x="46" y="30" class="title-text" fill="#fdba74">AWS EC2 • UBUNTU 24.04 • PM2 • NGINX • JENKINS CI/CD</text>
+
+  <!-- Connectors -->
+  <path d="M 80 120 L 115 120" class="pipe-line" stroke="#60a5fa" />
+  <path d="M 205 120 L 235 120" class="pipe-line" stroke="#f97316" />
+  <path d="M 335 120 L 365 120" class="pipe-line" stroke="#34d399" />
+  <path d="M 465 120 L 495 120" class="pipe-line" stroke="#a78bfa" />
+
+  <!-- Jenkins Pipeline Arc (Top) -->
+  <path d="M 160 85 C 160 55, 415 55, 415 85" class="pipe-line" stroke="#ef4444" stroke-width="1.8" />
+  <text x="287" y="62" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#f87171">Declarative Jenkins CI/CD Automation (Build #2 SUCCESS)</text>
+
+  <!-- Box 1: GitHub Repo -->
+  <g transform="translate(18, 90)">
+    <rect width="62" height="60" rx="8" fill="#1e293b" stroke="rgba(255,255,255,0.15)" />
+    <text x="31" y="24" text-anchor="middle" font-size="14">🐙</text>
+    <text x="31" y="38" text-anchor="middle" font-family="Inter" font-size="8" font-weight="600" fill="#f8fafc">GitHub</text>
+    <text x="31" y="47" text-anchor="middle" font-family="JetBrains Mono" font-size="6.5" fill="#94a3b8">main branch</text>
+  </g>
+
+  <!-- Box 2: Jenkins Server -->
+  <g transform="translate(115, 87)">
+    <rect width="90" height="66" rx="8" fill="url(#jenkinsGrad)" stroke="#ef4444" stroke-width="1.2" />
+    <text x="12" y="20" class="node-title" fill="#fca5a5">Jenkins CI/CD</text>
+    <text x="12" y="32" class="node-sub">Port 8080</text>
+    <rect x="8" y="44" width="74" height="15" rx="3" fill="rgba(0,0,0,0.3)" />
+    <text x="45" y="55" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" fill="#86efac">Pipeline SUCCESS</text>
+  </g>
+
+  <!-- Box 3: Cloudflare Quick Tunnel -->
+  <g transform="translate(235, 87)">
+    <rect width="100" height="66" rx="8" fill="url(#cfGrad)" stroke="#f97316" stroke-width="1.2" />
+    <text x="12" y="20" class="node-title" fill="#fed7aa">Cloudflare</text>
+    <text x="12" y="32" class="node-sub">Quick Tunnel</text>
+    <rect x="8" y="44" width="84" height="15" rx="3" fill="rgba(0,0,0,0.3)" />
+    <text x="50" y="55" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#fdba74">Public HTTPS Demo</text>
+  </g>
+
+  <!-- Box 4: Nginx Reverse Proxy -->
+  <g transform="translate(365, 87)">
+    <rect width="100" height="66" rx="8" fill="url(#ec2Grad)" stroke="#10b981" stroke-width="1.2" />
+    <text x="12" y="20" class="node-title" fill="#a7f3d0">Nginx Proxy</text>
+    <text x="12" y="32" class="node-sub">Port 80 (Reverse)</text>
+    <rect x="8" y="44" width="84" height="15" rx="3" fill="rgba(0,0,0,0.3)" />
+    <text x="50" y="55" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#6ee7b7">Proxy → 127.0.0.1:3000</text>
+  </g>
+
+  <!-- Box 5: Node.js + PM2 (AWS EC2) -->
+  <g transform="translate(495, 87)">
+    <rect width="90" height="66" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2" />
+    <text x="10" y="20" class="node-title" fill="#bae6fd">Node.js 22</text>
+    <text x="10" y="32" class="node-sub">PM2 Process</text>
+    <rect x="6" y="44" width="78" height="15" rx="3" fill="rgba(0,0,0,0.3)" />
+    <text x="45" y="55" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#38bdf8">Status: ONLINE</text>
+  </g>
+
+  <!-- Bottom Details Bar -->
+  <g transform="translate(20, 208)">
+    <text x="0" y="12" font-family="JetBrains Mono" font-size="8.5" fill="#64748b">AWS EC2 (Ubuntu 24.04) • PM2 Daemon • Nginx Reverse Proxy • Cloudflare Quick Tunnel (Temporary Demo)</text>
+  </g>
+</svg>

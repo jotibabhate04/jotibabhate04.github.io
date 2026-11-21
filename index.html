@@ -2415,6 +2415,101 @@
             </div>
           </div>
         </article>
+
+        <!-- PROJECT 4: Kubernetes Three-Tier Application Deployment -->
+        <article class="project-card-3d" data-project="3">
+          <div class="project-thumb-frame">
+            <img src="assets/projects/k8s-ingress-3tier-3d.svg" alt="Kubernetes Three-Tier Application Deployment Architecture" class="project-thumb-svg" />
+          </div>
+
+          <div class="project-body">
+            <h3 class="project-title">Kubernetes Three-Tier Application Deployment</h3>
+            <p class="project-desc">
+              Deployed a three-tier application consisting of Frontend, Backend, and Admin components on Kubernetes. Configured Kubernetes Deployments, Services, and Ingress to manage application components and route incoming HTTP traffic.
+            </p>
+
+            <ul class="project-key-list">
+              <li>Frontend, Backend, and Admin components managed as Kubernetes Deployments</li>
+              <li>ClusterIP Kubernetes Services routing traffic to dedicated pods</li>
+              <li>Kubernetes Ingress Controller routing incoming external HTTP traffic</li>
+              <li>Verified testing: Frontend endpoint returned HTTP 200 OK</li>
+              <li>Backend /api endpoint returned HTTP 200 OK with "Backend is working successfully!"</li>
+            </ul>
+
+            <div class="project-tech-badges">
+              <span class="p-badge">Kubernetes</span>
+              <span class="p-badge">Docker</span>
+              <span class="p-badge">Nginx</span>
+              <span class="p-badge">Ingress Controller</span>
+              <span class="p-badge">K8s Deployments</span>
+              <span class="p-badge">K8s Services</span>
+              <span class="p-badge">YAML</span>
+              <span class="p-badge">Linux</span>
+            </div>
+
+            <div class="project-btn-row">
+              <button type="button" class="btn btn-outline btn-sm open-arch-btn" data-project="3">
+                <i class="fas fa-project-diagram"></i>
+                <span>View Architecture</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 5: Node.js Application Deployment using PM2, Nginx and Jenkins CI/CD -->
+        <article class="project-card-3d" data-project="4">
+          <div class="project-thumb-frame">
+            <img src="assets/projects/nodejs-devops-3d.svg" alt="Node.js Application Deployment using PM2, Nginx and Jenkins CI/CD" class="project-thumb-svg" />
+          </div>
+
+          <div class="project-body">
+            <h3 class="project-title">Node.js Application Deployment using PM2, Nginx and Jenkins CI/CD</h3>
+            <p class="project-desc">
+              Deployed a Node.js application on AWS EC2 Ubuntu 24.04 and implemented a Jenkins CI/CD pipeline to automate application deployment. Used PM2 for process management, Nginx as a reverse proxy, and Cloudflare Tunnel to provide temporary public HTTPS access.
+            </p>
+
+            <ul class="project-key-list">
+              <li>Deployed Node.js application on AWS EC2 (Ubuntu 24.04, US East)</li>
+              <li>Managed application processes using PM2 background daemon (Status: ONLINE)</li>
+              <li>Configured Nginx reverse proxy on port 80 forwarding to port 3000</li>
+              <li>Declarative Jenkins pipeline automating checkout, install, deployment &amp; verification</li>
+              <li>Verified testing: Jenkins Pipeline Build #2 SUCCESS with curl verification</li>
+              <li>Temporary Cloudflare Quick Tunnel configured for public HTTPS access</li>
+            </ul>
+
+            <div class="project-tech-badges">
+              <span class="p-badge">AWS EC2</span>
+              <span class="p-badge">Ubuntu 24.04</span>
+              <span class="p-badge">Node.js 22</span>
+              <span class="p-badge">PM2</span>
+              <span class="p-badge">Nginx</span>
+              <span class="p-badge">Jenkins</span>
+              <span class="p-badge">Jenkinsfile</span>
+              <span class="p-badge">Git</span>
+              <span class="p-badge">GitHub</span>
+              <span class="p-badge">Cloudflare Tunnel</span>
+            </div>
+
+            <div class="project-btn-row">
+              <a href="https://github.com/jotibabhate04/nodejs-devops-project" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" onclick="event.stopPropagation()">
+                <i class="fab fa-github"></i>
+                <span>GitHub Repo</span>
+              </a>
+              <button type="button" class="btn btn-outline btn-sm open-arch-btn" data-project="4">
+                <i class="fas fa-project-diagram"></i>
+                <span>View Architecture</span>
+              </button>
+              <button type="button" class="btn btn-outline btn-sm preview-resume-btn" data-file="assets/documents/DevOps-Project-Documentation.pdf" data-title="Node.js DevOps Project Documentation" data-badge="Project Documentation" onclick="event.stopPropagation()">
+                <i class="fas fa-file-pdf"></i>
+                <span>View Documentation</span>
+              </button>
+              <a href="https://animal-webster-festival-kurt.trycloudflare.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" onclick="event.stopPropagation()" title="Temporary Cloudflare Quick Tunnel demo URL (temporary demo link)">
+                <i class="fas fa-external-link-alt"></i>
+                <span>Demo (Temp)</span>
+              </a>
+            </div>
+          </div>
+        </article>
       </div>
 
       <!-- Official GitHub Callout -->
@@ -3230,6 +3325,35 @@
           'Dual NAT Gateways providing outbound internet access for private application instances.',
           'Amazon S3 Gateway VPC Endpoint providing direct, private network routing to S3 buckets.'
         ]
+      },
+      {
+        title: 'Kubernetes Three-Tier Application Deployment',
+        badge: 'Kubernetes Ingress & Deployments',
+        img: 'assets/projects/k8s-ingress-3tier-3d.svg',
+        github: '',
+        desc: 'Deployed a three-tier application consisting of Frontend, Backend, and Admin components on Kubernetes. Configured Kubernetes Deployments, Services, and Ingress to manage application components and route incoming HTTP traffic.',
+        highlights: [
+          'External HTTP incoming traffic managed by Kubernetes Ingress Controller.',
+          'Three dedicated ClusterIP Services routing to Frontend, Backend, and Admin Deployments.',
+          'Verified testing: Frontend endpoint returned HTTP 200 OK.',
+          'Backend /api endpoint returned HTTP 200 OK with response: "Backend is working successfully!".',
+          'Deployments, Services, and Ingress rules defined declaratively in Kubernetes YAML.'
+        ]
+      },
+      {
+        title: 'Node.js Application Deployment using PM2, Nginx and Jenkins CI/CD',
+        badge: 'Jenkins CI/CD & AWS EC2',
+        img: 'assets/projects/nodejs-devops-architecture.png',
+        github: 'https://github.com/jotibabhate04/nodejs-devops-project',
+        desc: 'Deployed a Node.js application on AWS EC2 Ubuntu 24.04 and implemented a Jenkins CI/CD pipeline to automate application deployment. Used PM2 for process management, Nginx as a reverse proxy, and Cloudflare Tunnel to provide temporary public HTTPS access.',
+        highlights: [
+          'Deployed on AWS EC2 cloud instance running Ubuntu 24.04 in US East.',
+          'Process lifecycle managed with PM2 daemon (Status: ONLINE, automatic restart, host metrics monitoring).',
+          'Nginx configured as reverse proxy on port 80 forwarding requests to port 3000.',
+          'Declarative Jenkins pipeline automating SCM checkout, dependency installation, deployment, and verification.',
+          'Automated verification using curl and PM2 status validation (Build #2 finished with SUCCESS).',
+          'Cloudflare Quick Tunnel (temporary demo link) providing external public HTTPS access without inbound firewall ports.'
+        ]
       }
     ];
 
@@ -3250,7 +3374,12 @@
       archModalBadge.textContent = p.badge;
       archModalImg.src = p.img;
       archModalDesc.textContent = p.desc;
-      archModalGithub.href = p.github;
+      if (p.github) {
+        archModalGithub.href = p.github;
+        archModalGithub.style.display = 'inline-flex';
+      } else {
+        archModalGithub.style.display = 'none';
+      }
 
       archModalHighlights.innerHTML = p.highlights.map(h => `<li>${h}</li>`).join('');
 
@@ -3317,8 +3446,9 @@
       btn.addEventListener('click', () => {
         const file = btn.getAttribute('data-file');
         const title = btn.getAttribute('data-title');
+        const badge = btn.getAttribute('data-badge') || 'Resume Preview';
         const downloadName = file.split('/').pop();
-        openPdfModal(file, title, 'Resume Preview', downloadName);
+        openPdfModal(file, title, badge, downloadName);
       });
     });
 
