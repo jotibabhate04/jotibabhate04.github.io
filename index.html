@@ -2472,9 +2472,17 @@
             </div>
 
             <div class="project-btn-row">
+              <a href="https://github.com/jotibabhate04/kubernetes-three-tier-ingress" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" onclick="event.stopPropagation()">
+                <i class="fab fa-github"></i>
+                <span>GitHub Repo</span>
+              </a>
               <button type="button" class="btn btn-outline btn-sm open-arch-btn" data-project="3">
                 <i class="fas fa-project-diagram"></i>
                 <span>View Architecture</span>
+              </button>
+              <button type="button" class="btn btn-outline btn-sm preview-resume-btn" data-file="assets/documents/Kubernetes-Three-Tier-Documentation.pdf" data-title="Kubernetes Three-Tier Ingress Documentation" data-badge="Project Documentation" onclick="event.stopPropagation()">
+                <i class="fas fa-file-pdf"></i>
+                <span>View Documentation</span>
               </button>
             </div>
           </div>
@@ -3354,14 +3362,15 @@
         title: 'Kubernetes Three-Tier Application Deployment',
         badge: 'Kubernetes Ingress & Deployments',
         img: 'assets/projects/k8s-ingress-3tier-3d.svg',
-        github: '',
+        github: 'https://github.com/jotibabhate04/kubernetes-three-tier-ingress',
         desc: 'Deployed a three-tier application consisting of Frontend, Backend, and Admin components on Kubernetes. Configured Kubernetes Deployments, Services, and Ingress to manage application components and route incoming HTTP traffic.',
         highlights: [
-          'External HTTP incoming traffic managed by Kubernetes Ingress Controller.',
-          'Three dedicated ClusterIP Services routing to Frontend, Backend, and Admin Deployments.',
-          'Verified testing: Frontend endpoint returned HTTP 200 OK.',
-          'Backend /api endpoint returned HTTP 200 OK with response: "Backend is working successfully!".',
-          'Deployments, Services, and Ingress rules defined declaratively in Kubernetes YAML.'
+          'External HTTP incoming traffic managed by NGINX Ingress Controller.',
+          'Three dedicated ClusterIP Services routing to Frontend (port 80), Backend (port 5000), and Admin (port 80) Deployments.',
+          'Frontend endpoint (/) returned HTTP 200 OK (NGINX).',
+          'Backend endpoint (/api) returned HTTP 200 OK with "Backend is working successfully!".',
+          'Admin endpoint (/admin) returned HTTP 200 OK ("It works!" Apache httpd).',
+          'Declarative Kubernetes manifests for Deployments, ClusterIP Services, and Ingress rules.'
         ]
       },
       {

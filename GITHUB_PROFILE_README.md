@@ -115,11 +115,17 @@ I am a hands-on **DevOps Engineer & Cloud Enthusiast** passionate about architec
 ### 4. ☸️ Kubernetes Three-Tier Application Deployment
 > Deployed a three-tier application consisting of Frontend, Backend, and Admin components on Kubernetes. Configured Kubernetes Deployments, Services, and Ingress to manage application components and route incoming HTTP traffic.
 
-[![Kubernetes Ingress 3-Tier Architecture](https://raw.githubusercontent.com/jotibabhate04/jotibabhate04.github.io/main/k8s-ingress-3tier-3d.svg)](https://jotibabhate04.github.io#projects)
+[![Kubernetes Ingress 3-Tier Architecture](https://raw.githubusercontent.com/jotibabhate04/jotibabhate04.github.io/main/k8s-ingress-3tier-3d.svg)](https://github.com/jotibabhate04/kubernetes-three-tier-ingress)
 
 <p align="center">
-  <a href="https://jotibabhate04.github.io#projects">
-    <img src="https://img.shields.io/badge/View_In_3D_Portfolio-Kubernetes_Ingress_Deployment-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
+  <a href="https://github.com/jotibabhate04/kubernetes-three-tier-ingress" target="_blank">
+    <img src="https://img.shields.io/badge/View_Repository-kubernetes--three--tier--ingress-326CE5?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  <a href="https://jotibabhate04.github.io" target="_blank">
+    <img src="https://img.shields.io/badge/Documentation-View_PDF-F59E0B?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white" />
+  </a>
+  <a href="https://jotibabhate04.github.io#projects" target="_blank">
+    <img src="https://img.shields.io/badge/View_In_3D_Portfolio-Live_Site-06b6d4?style=for-the-badge&logo=google-chrome&logoColor=white" />
   </a>
 </p>
 
